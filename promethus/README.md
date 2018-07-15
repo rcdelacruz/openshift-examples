@@ -12,7 +12,7 @@ oc new-app prom/prometheus     #deploy latest prometheus
 oc create -f https://raw.githubusercontent.com/debianmaster/openshift-examples/master/promethus/prom-configmap.yml     #mount this configmap at at /etc/prometheus/prometheus.yml  #Scrape rules for prometheus 
 oc volume dc/prometheus --add --name=prom-k8s -m /etc/prometheus -t configmap --configmap-name=prom-k8s  #set rules inside prom
 
-if we want to add role to user
+#if we want to add role to user
 oc adm policy add-cluster-role-to-user cluster-admin admin
 ```
 
